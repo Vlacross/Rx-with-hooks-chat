@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wpserv": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "wpserv": "NODE_ENV=development ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build": "NODE_ENV=development ./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",

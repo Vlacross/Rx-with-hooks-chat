@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import chatStore from '../store/chat';
 
+console.log('FoyPoy')
+
 const FirstPerson = () => {
-  const [chatState, setChateState] = useState({});
+  const [chatState, setChatState] = useState(chatStore.initialState);
+
+  useLayoutEffect(()=> {
+    chatStore.subscribe(setChatState);
+    chatStore.init();
+  }, []);
+
   return (
     <div className="container">
       <h2>
@@ -17,7 +25,7 @@ const FirstPerson = () => {
         ))}
       </div>
       <form id="messageForm">
-        <label for="messageInput">Message Text:</label>
+        <label htmlFor="messageInput">Message Text:</label>
         <input
           type="text" 
           id="messageInput"

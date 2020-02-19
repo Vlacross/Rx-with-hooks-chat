@@ -9,6 +9,8 @@ const initialState = {
   error: ''
 };
 
+let state = initialState;
+
 const chatStore = {
   init: () => {
     state = {...state, newDataCount: 0},
@@ -24,7 +26,7 @@ const chatStore = {
     subject.next(state);
   },
   clearChat: () => {
-    state = {...state, data: []};
+    state = initialState;
     subject.next(state);
   },
   initialState
