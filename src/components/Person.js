@@ -8,6 +8,7 @@ const Person = () => {
   useLayoutEffect(()=> {
     chatStore.subscribe(setChatState);
     chatStore.init();
+    
   }, []);
 
   const onFormSubmit = e => {

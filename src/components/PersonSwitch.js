@@ -9,6 +9,10 @@ const PersonSwitch = () => {
   useEffect(() => {
     chatStore.subscribe(setChatState);
     chatStore.init();
+
+    // return () => {
+    //   chatStore.unsubscribe(setChatState)
+    // }
   }, [])
 
   const messageNotification = chatState.newDataCount > 0 && (<span className="notify">{chatState.newDataCount}</span>);

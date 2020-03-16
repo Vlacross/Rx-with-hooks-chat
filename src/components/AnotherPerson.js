@@ -7,6 +7,7 @@ const AnotherPerson = () => {
   useLayoutEffect(()=> {
     chatStore.subscribe(setChatState);
     chatStore.init();
+    
   }, []);
 
   const onFormSubmit = e => {
@@ -26,7 +27,7 @@ const AnotherPerson = () => {
       </h2>
       <div className="chat-box">
         {chatState.data.map((message, index) => (
-          <div key={index}>
+          <div style={{float: 'right'}} key={index}>
             <p className={message.person}>{message.text}</p>
             <div className="clear"></div>  
           </div>
